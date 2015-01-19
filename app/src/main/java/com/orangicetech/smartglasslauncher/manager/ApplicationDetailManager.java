@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 
-import com.orangicetech.smartglasslauncher.model.ApplicationDetail;
+import com.orangicetech.smartglasslauncher.model.ApplicationDetailModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +16,18 @@ import java.util.List;
 public class ApplicationDetailManager {
 
     PackageManager manager;
-    static ArrayList<ApplicationDetail> apps = null;
+    static ArrayList<ApplicationDetailModel> apps = null;
 
     public ApplicationDetailManager(Context ctx) {
         manager = ctx.getPackageManager();
-        apps = new ArrayList<ApplicationDetail>();
+        apps = new ArrayList<ApplicationDetailModel>();
 
         Intent i = new Intent(Intent.ACTION_MAIN, null);
         i.addCategory(Intent.CATEGORY_LAUNCHER);
 
         List<ResolveInfo> availableActivities = manager.queryIntentActivities(i, 0);
         for(ResolveInfo ri:availableActivities){
-            ApplicationDetail app = new ApplicationDetail();
+            ApplicationDetailModel app = new ApplicationDetailModel();
 
         }
 

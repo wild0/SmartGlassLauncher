@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 /**
  * Created by wild0 on 2014/12/13.
  */
-public class ApplicationDetail {
+public class ApplicationDetailModel {
     public String getName() {
         return name;
     }
